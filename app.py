@@ -1,4 +1,5 @@
 import openai
+import streamlit as st
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 def get_response(prompt):
     """Returns the response for the given prompt using the OpenAI API."""
