@@ -24,12 +24,19 @@ def handle_input(
 
     # Update the conversation history
     conversation_history += f"{message}\n"
+    file = open("convo.txt","a")
+    file.write(conversation_history)
+    file.write("\n")
+    file.close()
+    
     # Print the response
     st.success(message)
     
     return conversation_history
 
-
+f = open("convo.txt","w")
+f.write("")
+f.close()
 conversation_history = ''''''
 #UI
 # Get the user's input
@@ -37,5 +44,7 @@ conversation_history = ''''''
 user_input = st.text_area("Enter your query:")
 # Handle the input
 if st.button("Ask The Bot"):
+    file = open("convo.txt","r)
+        conversation_history = file.read()
     conversation_history = handle_input(user_input, conversation_history)
     st.write("Present context:",conversation_history)  
