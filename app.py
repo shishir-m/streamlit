@@ -49,3 +49,7 @@ if st.button("Ask The Bot"):
     file.close()
     conversation_history = handle_input(user_input, conversation_history)
     st.write("Present context:",conversation_history)  
+if st.button("Clear context"):
+    file = open("convo.txt","w")
+    file.write("")
+    file.close()
