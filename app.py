@@ -1,8 +1,5 @@
-import streamlit as st
-import time
 import openai
 openai.api_key = st.secrets["OPENAI_API_KEY"]
-
 def get_response(prompt):
     """Returns the response for the given prompt using the OpenAI API."""
     completions = openai.Completion.create(
@@ -31,27 +28,12 @@ def handle_input(
     
     return conversation_history
 
-def show_stuff():
-    return("This is a debug response from the bot")
 
-st.set_page_config(layout="wide")
-
-# creating a placeholder for the fixed sized textbox
-txtbox = st.empty()
-txt = 'context'
-#txtbox.text_area("Q:",txt, height = 500)
-
-end_of_loop = False
-counter = 1
-output = ''
-
-while (end_of_loop==False):
-    txtbox.text_area("Enter your query:",txt, height = 500)
-    if st.button("Ask The Bot"):
-        output = show_stuff()
-        txt += output
-        counter += 1
-        if (counter > 100):
-            end_of_loop = True
-
-    time.sleep(0.2)
+conversation_history = ''''''
+while True:
+    # Get the user's input
+    st.write("Present context:",conversation_history)
+    
+    user_input = st.text_area("Enter your query:")
+    # Handle the input
+    conversation_history = handle_input(user_input, conversation_history)
