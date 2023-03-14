@@ -39,7 +39,7 @@ st.set_page_config(layout="wide")
 # creating a placeholder for the fixed sized textbox
 txtbox = st.empty()
 txt = ''
-txtbox.text_area("Q:",txt, height = 500)
+#txtbox.text_area("Q:",txt, height = 500)
 
 end_of_loop = False
 counter = 1
