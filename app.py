@@ -38,7 +38,7 @@ st.set_page_config(layout="wide")
 
 # creating a placeholder for the fixed sized textbox
 txtbox = st.empty()
-txt = ''
+txt = 'context'
 #txtbox.text_area("Q:",txt, height = 500)
 
 end_of_loop = False
@@ -50,7 +50,6 @@ while (end_of_loop==False):
     if st.button("Ask The Bot"):
         output = show_stuff()
         txt += output
-        #txtbox.text_area("Enter your query:",txt, height=500)
         counter += 1
         if (counter > 100):
             end_of_loop = True
