@@ -44,7 +44,8 @@ conversation_history = ''''''
 user_input = st.text_area("Enter your query:")
 # Handle the input
 if st.button("Ask The Bot"):
-    file = open("convo.txt","r)
+    file = open("convo.txt","r")
         conversation_history = file.read()
+    file.close()
     conversation_history = handle_input(user_input, conversation_history)
     st.write("Present context:",conversation_history)  
