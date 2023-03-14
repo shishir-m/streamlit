@@ -46,7 +46,7 @@ counter = 1
 output = ''
 
 while (end_of_loop==False):
-    txt = txtbox.text_area("Enter your query:",txt, height = 500)
+    txtbox.text_area("Enter your query:",txt, height = 500)
     if st.button("Ask The Bot"):
         output = show_stuff()
         txt += output
