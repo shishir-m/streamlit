@@ -43,6 +43,7 @@ txtbox.text_area("Q:",txt, height = 500)
 
 end_of_loop = False
 counter = 1
+output = ''
 
 while (end_of_loop==False):
     txt = txtbox.text_area("Enter your query:",txt, height = 500)
