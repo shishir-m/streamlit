@@ -50,7 +50,7 @@ while (end_of_loop==False):
     if st.button("Ask The Bot"):
         output = show_stuff()
         txt += output
-        txtbox.text_area("Enter your query:",txt, height=500)
+        #txtbox.text_area("Enter your query:",txt, height=500)
         counter += 1
         if (counter > 100):
             end_of_loop = True
