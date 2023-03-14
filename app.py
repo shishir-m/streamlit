@@ -25,16 +25,17 @@ def handle_input(
     # Update the conversation history
     conversation_history += f"{message}\n"
     # Print the response
-    print(message)
+    st.success(message)
     
     return conversation_history
 
 
 conversation_history = ''''''
-while True:
-    # Get the user's input
-    st.write("Present context:",conversation_history)
-    
-    user_input = st.text_area("Enter your query:")
-    # Handle the input
+#UI
+# Get the user's input
+ 
+user_input = st.text_area("Enter your query:")
+# Handle the input
+if st.button("Ask The Bot"):
     conversation_history = handle_input(user_input, conversation_history)
+    st.write("Present context:",conversation_history)  
